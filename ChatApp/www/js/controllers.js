@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['firebase.chat'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
   // Form data for the login modal
@@ -33,16 +33,23 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
+.controller('PlaylistsCtrl', ['$scope', 'chat', function($scope, chat) {
+
+    $scope.chats = [];
+    $scope.user = {};
+
+    chat.onMessageReceived(function(name, message){
+      $scope.chats.push({name: name, message: message});
+      $scope.$apply();
+    });
+
+    $scope.send = function(){
+      chat.sendMessage($scope.user.name, $scope.user.message, function(errObj){
+        alert(errObj.message);
+      });
+    };
+
+}])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });

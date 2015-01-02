@@ -7,19 +7,14 @@ angular.module('firebase.chat',[]).factory('chat', [function(){
     sendMessage: function(name, message, errorCallback){
       chats.push({name: name, message: message}, errorCallback ? errorCallback : function(){});
     },
-    onMessageReceived: function(callback, errorCallback){
-      chats.on('child_added', function(snapshot) {
+    onMessageReceived: function(callback, errorCallback) {
+      chats.on('child_added', function (snapshot) {
         var chatData = snapshot.val();
         callback(chatData.name, chatData.message);
-      }, function(errorObj){
-        if(errorCallback){
+      }, function (errorObj) {
+        if (errorCallback) {
           errorCallback(errorObj);
         }
-      });
-    },
-    getPastMessages: function(callback){
-      chats.once("value", function(snapshot) {
-        callback(_.values(snapshot.val())[0]);
       });
     }
   }

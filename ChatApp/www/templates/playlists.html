@@ -1,5 +1,21 @@
 <ion-view view-title="Playlists">
   <ion-content>
+    <label class="item item-input">
+      <span class="input-label">Username</span>
+      <input type="text" ng-model="user.name" />
+    </label>
+    <ion-list>
+      <ion-item ng-repeat="chat in chats">
+        {{chat.name}} : {{chat.message}}
+      </ion-item>
+    </ion-list>
+    <label class="item item-input">
+      <span class="input-label">Message</span>
+      <input type="text" ng-model="user.message" />
+    </label>
+    <button class="button button-full button-calm" ng-click="send()">
+      Send
+    </button>
     <ion-list>
       <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
         {{playlist.title}}
