@@ -1,12 +1,12 @@
 # Getting Started with Ionic
 
-This is a base repository for getting started with the (Ionic)[http://ionicframework.com/] framework.
+This is a base repository for getting started with the [Ionic](http://ionicframework.com/) framework.
 
-The project will build a small interactive chat application using (Firebase)[https://www.firebase.com/] that will allow
+The project will build a small interactive chat application using [Firebase](https://www.firebase.com/) that will allow
 users to chat in real time.
 
 # Vagrant Setup
-If you don't already, you should have (Vagrant)[https://www.vagrantup.com/] and (Virtual Box)[https://www.virtualbox.org/]
+If you don't already, you should have [Vagrant](https://www.vagrantup.com/) and [Virtual Box](https://www.virtualbox.org/)
 installed.
 
 Open a command prompt to the directory you cloned this repository to and type `vagrant up` to load the vagrant box for
@@ -17,7 +17,7 @@ Then type `vagrant ssh` to load up a command prompt to the machine with the enti
 # Preview the Project
 While ssh'd into your vagrant machine, go to the directory `/vagrant/ChatApp` and type `ionic serve`
 
-Then, open a browser window to (http://localhost:8100/)[http://localhost:8100] and this should show the Ionic project
+Then, open a browser window to [http://localhost:8100/](http://localhost:8100) and this should show the Ionic project
 as you're working on it!
 
 # Things we are covering in this project
