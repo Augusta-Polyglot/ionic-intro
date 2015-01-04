@@ -27,3 +27,12 @@ as you're working on it!
   * Services
 2. Basic Ionic Components
 3. Installing an APK on an Android device
+
+## Challenges
+1. Add validation so we don't send blank data to the server.
+2. Add Emoji support
+  * http://www.emojione.com/developers
+3. Make the app show a gravatar image if the name is an e-mail address
+  * Just check for something simple like the existence of @ and . in the name.
+4. Alter the firebase service to store and retrieve a timestamp for messages
+
