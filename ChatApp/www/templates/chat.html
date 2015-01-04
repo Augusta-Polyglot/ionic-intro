@@ -1,13 +1,16 @@
 <ion-view view-title="Chat">
   <ion-content>
-    <div class="card">
-      <div class="item item-text-wrap">
-        This page is where we'll read and send chats.
-        We want it to show all the chats that have already happened,
-        and automatically show chats coming in and chats we send.
-        We will also show who sent the message.
-        Feel free to delete this content and add your own.
-      </div>
-    </div>
+    <label class="item item-input">
+      <span class="input-label">Message</span>
+      <input type="text" ng-model="user.message">
+    </label>
+    <button class="button button-block button-calm" ng-click="send()">
+      Send
+    </button>
+    <ion-list>
+      <ion-item ng-repeat="chat in chats">
+        {{chat.name}}: {{chat.message}}
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

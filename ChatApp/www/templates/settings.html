@@ -1,11 +1,11 @@
 <ion-view view-title="Settings">
   <ion-content>
-    <div class="card">
-      <div class="item item-text-wrap">
-        This page is where we'll add settings to the system.
-        Username, email, etc are things that can be setup here.
-        Feel free to delete this content and add your own.
-      </div>
-    </div>
+    <label class="item item-input">
+      <span class="input-label">Name</span>
+      <input type="text" ng-model="user.name">
+    </label>
+    <button class="button button-block button-calm" ng-click="saveSettings()">
+      Save
+    </button>
   </ion-content>
 </ion-view>
