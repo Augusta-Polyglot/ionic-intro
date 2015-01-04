@@ -4,8 +4,8 @@
 angular.module('firebase.chat',[]).factory('chat', [function(){
   var chats = new Firebase('https://awesomenaut-studios.firebaseio.com/chats');
   return {
-    sendMessage: function(name, message, errorCallback){
-      chats.push({name: name, message: message}, errorCallback ? errorCallback : function(){});
+    sendMessage: function(name, message, onComplete){
+      chats.push({name: name, message: message}, onComplete ? onComplete : function(){});
     },
     onMessageReceived: function(callback, errorCallback) {
       chats.on('child_added', function (snapshot) {
